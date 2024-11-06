@@ -1,21 +1,12 @@
 # UnusedAliasExample
 
-**TODO: Add description**
+Example for https://github.com/elixir-lang/elixir/issues/13975
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `unused_alias_example` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:unused_alias_example, "~> 0.1.0"}
-  ]
-end
+Reproduce described behaviour:
 ```
+$ export FOO=
+$ mix compile --force
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/unused_alias_example>.
-
+$ unset FOO
+$ mix compile --force
+```
